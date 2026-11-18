@@ -35,6 +35,45 @@ public class CarController {
                 car.move();
                 int x = (int) Math.round(car.getX());
                 int y = (int) Math.round(car.getY());
+
+                int panelWidth = frame.drawPanel.getWidth();
+                    if (car.getDirection() == 1) {
+                        if (x + frame.drawPanel.volvoImage.getWidth() >= panelWidth) {
+                            car.stopEngine();
+                            car.turnRight();
+                            car.turnRight();
+                            car.startEngine();
+                        }
+                    }
+
+                if (car.getDirection() == 3) {
+                    if (x <= 0) {
+                        car.stopEngine();
+                        car.turnRight();
+                        car.turnRight();
+                        car.startEngine();
+                    }
+                }
+
+                int panelHeight = frame.drawPanel.getHeight();
+                    if (car.getDirection() == 0) {
+                        if (y + frame.drawPanel.volvoImage.getHeight() >= panelHeight) {
+                            car.stopEngine();
+                            car.turnRight();
+                            car.turnRight();
+                            car.startEngine();
+                    }
+                }
+
+                if (car.getDirection() == 2) {
+                    if (y <= 0) {
+                        car.stopEngine();
+                        car.turnRight();
+                        car.turnRight();
+                        car.startEngine();
+                    }
+                }
+
                 frame.drawPanel.moveit(x, y);
                 // repaint() calls the paintComponent method of the panel
                 frame.drawPanel.revalidate();
@@ -70,4 +109,17 @@ public class CarController {
             car.stopEngine();
         }
     }
+
+    void turnLeft() {
+       for (Car car : cars) {
+           car.turnLeft();
+       }
+    }
+
+    void turnRight() {
+        for (Car car : cars) {
+            car.turnRight();
+        }
+    }
+
 }
