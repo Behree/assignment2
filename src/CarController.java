@@ -74,7 +74,12 @@ public class CarController {
                     }
                 }
 
-                frame.drawPanel.moveit(x, y);
+                if (car instanceof Saab95) {
+                    frame.drawPanel.moveSaab(x, y);
+                } else if (car instanceof Volvo240) {
+                    frame.drawPanel.moveVolvo(x, y);
+                }
+
                 // repaint() calls the paintComponent method of the panel
                 frame.drawPanel.revalidate();
                 frame.drawPanel.repaint();
@@ -122,4 +127,21 @@ public class CarController {
         }
     }
 
+    void setTurboOn() {
+        for (Car car : cars) {
+            if (car instanceof Saab95) {
+                ((Saab95) car).setTurboOn();
+            }
+        }
+    }
+
+    void setTurboOff() {
+        for (Car car : cars) {
+            if (car instanceof Saab95) {
+                ((Saab95) car).setTurboOff();
+            }
+        }
+    }
 }
+
+     

@@ -47,6 +47,11 @@ public abstract class  Car implements Movable {
         currentSpeed = 0.1;
     }
 
+    public void setPosition(double x,double y) {
+        this.x = x;
+        this.y = y;
+    }
+
     public void stopEngine() {
         currentSpeed = 0;
     }
