@@ -3,7 +3,7 @@ import java.awt.*;
 //Car is the dad and has two children Volvo240 and Saab95.
 //Car preserves all the shared features of both cars.
 //Combined all the shared features into one file.
-public abstract class  Car implements Movable {
+public abstract class Car implements Movable {
     private int nrDoors;
     private double enginePower;
     private double currentSpeed;
