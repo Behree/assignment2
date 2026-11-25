@@ -26,7 +26,7 @@ public class CarController {
     }
 
     /* Each step, the TimerListener moves all cars in the list and tells the
-     * view to update its images. TODO Change this method to your needs.
+     * view to update its images.
      */
     private class TimerListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
@@ -37,7 +37,7 @@ public class CarController {
                 int y = (int) Math.round(car.getY());
 
                 int panelWidth = frame.drawPanel.getWidth();
-                    if (car.getDirection() == 1) {
+                    if (car.getDirection() == 1) {              // Right
                         if (x + frame.drawPanel.volvoImage.getWidth() >= panelWidth) {
                             car.stopEngine();
                             car.turnRight();
@@ -46,7 +46,7 @@ public class CarController {
                         }
                     }
 
-                if (car.getDirection() == 3) {
+                if (car.getDirection() == 3) {                 // Left
                     if (x <= 0) {
                         car.stopEngine();
                         car.turnRight();
@@ -56,7 +56,7 @@ public class CarController {
                 }
 
                 int panelHeight = frame.drawPanel.getHeight();
-                    if (car.getDirection() == 0) {
+                    if (car.getDirection() == 0) {             // Down = +y
                         if (y + frame.drawPanel.volvoImage.getHeight() >= panelHeight) {
                             car.stopEngine();
                             car.turnRight();
@@ -65,7 +65,7 @@ public class CarController {
                     }
                 }
 
-                if (car.getDirection() == 2) {
+                if (car.getDirection() == 2) {                // Up = -y
                     if (y <= 0) {
                         car.stopEngine();
                         car.turnRight();

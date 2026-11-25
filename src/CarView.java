@@ -95,11 +95,11 @@ public class CarView extends JFrame {
 
         // This actionListener is for the gas button only
         // TODO: Create more for each component as necessary
-        gasButton.addActionListener(e -> {
+        gasButton.addActionListener(e -> {              // Added Listener
             carC.gas(gasAmount);
         });
 
-        brakeButton.addActionListener(e -> {
+        brakeButton.addActionListener(e -> {           // Added Listener
             carC.brake(gasAmount);
         });
 

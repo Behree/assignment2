@@ -2,11 +2,11 @@ void main() {
     // Instance of this class
     CarController cc = new CarController();
 
-    // TODO uncomment, and adapt if necessary
-    cc.cars.add(new Volvo240());
+    // TODO uncomment: DONE
+    cc.cars.add(new Volvo240());          // Volvo has been added s(0,0)
 
-    Saab95 saab = new Saab95();
-        saab.setPosition(0, 150);
+    Saab95 saab = new Saab95();           // A new saab car has been created
+        saab.setPosition(0, 150);   // d.s(0,150)
         cc.cars.add(saab);
 
 
